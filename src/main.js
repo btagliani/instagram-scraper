@@ -81,14 +81,6 @@ Apify.main(async () => {
         Please contact support@apify.com for access to residential proxy.
 --------`);
         }
-
-        if (usingLoginCookies && proxyConfiguration?.groups?.includes('RESIDENTIAL') === true) {
-            throw new Error(`
---------
-        RESIDENTIAL proxy group when using login cookies is not advised as the location of the IP will keep changing.
-        Change to a datacenter proxy.
---------`);
-        }
     }
 
     const doRequest = helpers.createGotRequester({
